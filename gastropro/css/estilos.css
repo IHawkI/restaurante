@@ -1,0 +1,467 @@
+/* ---------- 1. Variables ---------- */
+:root {
+  /* Paleta */
+  --gp-bosque: #14342B;
+  /* color principal: navbar, títulos, botón primario */
+  --gp-bosque-profundo: #0D241E;
+  /* footer, estados hover */
+  --gp-limon: #E4C441;
+  /* acento: botón destacado, enlace activo */
+  --gp-limon-suave: #F3E7A6;
+  /* fondos de etiquetas */
+  --gp-papel: #F6F8F5;
+  /* fondo de página */
+  --gp-blanco: #FFFFFF;
+  /* tarjetas y paneles */
+  --gp-tinta: #1B1F1D;
+  /* texto */
+  --gp-tinta-suave: #55625C;
+  /* texto secundario */
+  --gp-borde: #D9E0DB;
+  /* bordes */
+  --gp-salsa: #B8321F;
+  /* errores / avisos importantes */
+
+  /* Tipografía */
+  --gp-fuente-titulos: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --gp-fuente-texto: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+
+  /* Forma y espacio */
+  --gp-radio: .75rem;
+  /* tarjetas, paneles */
+  --gp-radio-sm: .5rem;
+  /* botones, campos */
+  --gp-seccion-y: clamp(3rem, 6vw, 5rem);
+  --gp-sombra: 0 1px 2px rgba(20, 52, 43, .08), 0 8px 24px rgba(20, 52, 43, .06);
+
+  /* Ajustes de Bootstrap para que todo herede el diseño */
+  --bs-primary: var(--gp-bosque);
+  --bs-primary-rgb: 20, 52, 43;
+  --bs-body-bg: var(--gp-papel);
+  --bs-body-color: var(--gp-tinta);
+  --bs-body-font-family: var(--gp-fuente-texto);
+  --bs-body-font-size: 1.0625rem;
+  --bs-border-color: var(--gp-borde);
+  --bs-heading-color: var(--gp-bosque);
+  --bs-link-color-rgb: 20, 52, 43;
+  --bs-link-hover-color-rgb: 13, 36, 30;
+}
+
+/* ---------- 2. Base y tipografía ---------- */
+body {
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: var(--gp-fuente-titulos);
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.15;
+}
+
+h1,
+.h1 {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+}
+
+h2,
+.h2 {
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+}
+
+h3,
+.h3 {
+  font-size: 1.35rem;
+}
+
+.gp-texto {
+  max-width: 65ch;
+}
+
+/* párrafos largos legibles */
+.gp-texto-suave {
+  color: var(--gp-tinta-suave);
+}
+
+.gp-precio {
+  font-family: var(--gp-fuente-titulos);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--gp-bosque);
+}
+
+/* ---------- 3. Botones ---------- */
+.btn {
+  font-weight: 600;
+  border-radius: var(--gp-radio-sm);
+  padding: .6rem 1.15rem;
+}
+
+.btn-lg {
+  padding: .8rem 1.6rem;
+  font-size: 1.1rem;
+}
+
+.btn-sm {
+  padding: .4rem .85rem;
+}
+
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--gp-bosque);
+  --bs-btn-border-color: var(--gp-bosque);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--gp-bosque-profundo);
+  --bs-btn-hover-border-color: var(--gp-bosque-profundo);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--gp-bosque-profundo);
+  --bs-btn-active-border-color: var(--gp-bosque-profundo);
+  --bs-btn-disabled-bg: var(--gp-bosque);
+  --bs-btn-disabled-border-color: var(--gp-bosque);
+  --bs-btn-focus-shadow-rgb: 20, 52, 43;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--gp-bosque);
+  --bs-btn-border-color: var(--gp-bosque);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--gp-bosque);
+  --bs-btn-hover-border-color: var(--gp-bosque);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--gp-bosque);
+  --bs-btn-active-border-color: var(--gp-bosque);
+  --bs-btn-focus-shadow-rgb: 20, 52, 43;
+}
+
+/* Botón de acento: la acción más importante de la pantalla (reservar, confirmar) */
+.btn-acento {
+  --bs-btn-color: var(--gp-tinta);
+  --bs-btn-bg: var(--gp-limon);
+  --bs-btn-border-color: var(--gp-limon);
+  --bs-btn-hover-color: var(--gp-tinta);
+  --bs-btn-hover-bg: #D4B52F;
+  --bs-btn-hover-border-color: #D4B52F;
+  --bs-btn-active-color: var(--gp-tinta);
+  --bs-btn-active-bg: #C9AA27;
+  --bs-btn-active-border-color: #C9AA27;
+  --bs-btn-focus-shadow-rgb: 228, 196, 65;
+}
+
+/* ---------- 4. Navbar ---------- */
+.gp-navbar {
+  background: var(--gp-bosque);
+  padding-block: .75rem;
+}
+
+.gp-navbar .navbar-brand {
+  font-family: var(--gp-fuente-titulos);
+  font-weight: 800;
+  font-size: 1.55rem;
+  letter-spacing: -.02em;
+  color: #fff;
+}
+
+.gp-navbar .navbar-brand span {
+  color: var(--gp-limon);
+}
+
+.gp-navbar .nav-link {
+  color: rgba(255, 255, 255, .82);
+  font-weight: 600;
+  padding: .5rem .9rem;
+}
+
+.gp-navbar .nav-link:hover {
+  color: #fff;
+}
+
+.gp-navbar .nav-link.active {
+  color: #fff;
+  box-shadow: inset 3px 0 0 var(--gp-limon);
+}
+
+@media (min-width: 992px) {
+  .gp-navbar .nav-link.active {
+    box-shadow: inset 0 -3px 0 var(--gp-limon);
+  }
+}
+
+/* ---------- 5. Footer ---------- */
+.gp-footer {
+  background: var(--gp-bosque-profundo);
+  color: rgba(255, 255, 255, .78);
+  padding: 3rem 0 1.5rem;
+  font-size: 1rem;
+}
+
+.gp-footer h2 {
+  font-size: 1.05rem;
+  color: #fff;
+  margin-bottom: .75rem;
+}
+
+.gp-footer .gp-footer-marca {
+  font-family: var(--gp-fuente-titulos);
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.gp-footer .gp-footer-marca span {
+  color: var(--gp-limon);
+}
+
+.gp-footer a {
+  color: rgba(255, 255, 255, .78);
+  text-decoration: none;
+}
+
+.gp-footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+  text-decoration-color: var(--gp-limon);
+}
+
+.gp-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gp-footer li+li {
+  margin-top: .35rem;
+}
+
+.gp-footer-base {
+  border-top: 1px solid rgba(255, 255, 255, .14);
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  font-size: .9rem;
+}
+
+/* ---------- 6. Estructura de página ---------- */
+.gp-seccion {
+  padding-block: var(--gp-seccion-y);
+}
+
+.gp-seccion-alt {
+  background: var(--gp-blanco);
+}
+
+.gp-encabezado {
+  max-width: 40rem;
+  margin-bottom: 2rem;
+}
+
+.gp-encabezado p {
+  color: var(--gp-tinta-suave);
+  margin-bottom: 0;
+}
+
+/* Hero: solo para index.html */
+.gp-hero {
+  background: var(--gp-bosque);
+  color: #fff;
+  padding-block: clamp(3.5rem, 9vw, 7rem);
+}
+
+.gp-hero h1 {
+  color: #fff;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  max-width: 16ch;
+}
+
+.gp-hero p {
+  color: rgba(255, 255, 255, .85);
+  font-size: 1.2rem;
+  max-width: 36rem;
+}
+
+/* Encabezado de páginas internas (menú, pedidos, reservaciones) */
+.gp-page-header {
+  background: var(--gp-bosque);
+  color: #fff;
+  padding-block: clamp(2rem, 5vw, 3.25rem);
+}
+
+.gp-page-header h1 {
+  color: #fff;
+  margin-bottom: .5rem;
+}
+
+.gp-page-header p {
+  color: rgba(255, 255, 255, .85);
+  margin: 0;
+  max-width: 40rem;
+}
+
+/* ---------- 7. Componentes ---------- */
+/* Panel: contenedor para formularios y resúmenes */
+.gp-panel {
+  background: var(--gp-blanco);
+  border: 1px solid var(--gp-borde);
+  border-radius: var(--gp-radio);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  box-shadow: var(--gp-sombra);
+}
+
+@media (min-width: 992px) {
+  .gp-sticky {
+    position: sticky;
+    top: 1.5rem;
+  }
+}
+
+/* Tarjeta de platillo */
+.gp-platillo {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--gp-blanco);
+  border: 1px solid var(--gp-borde);
+  border-radius: var(--gp-radio);
+  overflow: hidden;
+}
+
+.gp-platillo-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.gp-img-placeholder {
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  background: #E3EAE5;
+  color: var(--gp-tinta-suave);
+  font-size: .95rem;
+}
+
+.gp-platillo-cuerpo {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 1.1rem;
+}
+
+.gp-platillo-cuerpo h3 {
+  font-size: 1.2rem;
+  margin-bottom: .35rem;
+}
+
+.gp-platillo-cuerpo p {
+  color: var(--gp-tinta-suave);
+  font-size: .98rem;
+}
+
+.gp-platillo-pie {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+}
+
+/* Etiqueta pequeña (Vegetariano, Sin gluten, Nuevo…) */
+.gp-etiqueta {
+  display: inline-block;
+  padding: .15rem .65rem;
+  border-radius: 999px;
+  background: var(--gp-limon-suave);
+  color: var(--gp-tinta);
+  font-size: .85rem;
+  font-weight: 600;
+}
+
+/* Filtros de categoría del menú */
+.nav-pills {
+  --bs-nav-link-color: var(--gp-bosque);
+  --bs-nav-link-hover-color: var(--gp-bosque-profundo);
+  --bs-nav-pills-link-active-bg: var(--gp-bosque);
+  --bs-nav-pills-link-active-color: #fff;
+}
+
+.nav-pills .nav-link {
+  font-weight: 600;
+  border: 1px solid var(--gp-borde);
+  background: var(--gp-blanco);
+}
+
+.nav-pills .nav-link.active {
+  border-color: var(--gp-bosque);
+}
+
+/* ---------- 8. Formularios ---------- */
+.form-label {
+  font-weight: 600;
+}
+
+.form-control,
+.form-select {
+  border-radius: var(--gp-radio-sm);
+  border-color: #BFC9C3;
+  padding: .6rem .85rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--gp-bosque);
+  box-shadow: 0 0 0 .25rem rgba(20, 52, 43, .18);
+}
+
+.form-text {
+  color: var(--gp-tinta-suave);
+}
+
+/* ---------- 9. Accesibilidad ---------- */
+:focus-visible {
+  outline: 3px solid var(--gp-bosque);
+  outline-offset: 2px;
+}
+
+.gp-navbar :focus-visible,
+.gp-footer :focus-visible,
+.gp-hero :focus-visible,
+.gp-page-header :focus-visible {
+  outline-color: var(--gp-limon);
+}
+
+.gp-saltar {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  z-index: 2000;
+  padding: .6rem 1rem;
+  background: var(--gp-limon);
+  color: var(--gp-tinta);
+  font-weight: 700;
+}
+
+.gp-saltar:focus {
+  left: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

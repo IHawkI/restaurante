@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pedidos para recoger | GastroPro</title>
+  <meta name="description" content="Haz tu pedido en GastroPro y recógelo en el restaurante.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Source+Sans+3:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/estilos.css" rel="stylesheet">
+  <link href="css/pedidos.css" rel="stylesheet">
+  <script src="js/componentes.js" defer></script>
+</head>
+
+<body data-pagina="pedidos" class="d-flex flex-column min-vh-100">
+
+  <header id="gp-navbar"></header>
+
+  <main id="contenido" tabindex="-1" class="flex-grow-1">
+
+    <section class="gp-page-header">
+      <div class="container">
+        <h1>Pedidos para recoger</h1>
+        <p>Elige tus platillos, indica la hora y recógelos en el restaurante.</p>
+      </div>
+    </section>
+
+    <section class="gp-seccion">
+      <div class="container">
+        <div class="row g-4">
+
+          <!-- Columna izquierda: platillos disponibles -->
+          <div class="col-lg-7">
+            <div class="gp-panel">
+              <h2 class="h3 mb-3">Elige tus platillos</h2>
+
+              <ul class="list-group list-group-flush" id="lista-pedido">
+
+                <!-- Ensalada -->
+                <li class="list-group-item d-flex align-items-center justify-content-between gap-3 px-0">
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="img/platillo1.png" alt="Ensalada" class="gp-thumb rounded">
+                    <div>
+                      <strong>Ensalada</strong><br>
+                      <span class="gp-precio">$85.00</span>
+                    </div>
+                  </div>
+                  <div style="width: 6rem;">
+                    <label class="visually-hidden" for="cant-1">Cantidad de Ensalada</label>
+                    <input type="number" class="form-control" id="cant-1" data-nombre="Ensalada" data-precio="85.00"
+                      min="0" max="20" value="0">
+                  </div>
+                </li>
+
+                <!-- Ribeye -->
+                <li class="list-group-item d-flex align-items-center justify-content-between gap-3 px-0">
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="img/platillo2.png" alt="Ribeye" class="gp-thumb rounded">
+                    <div>
+                      <strong>Ribeye</strong><br>
+                      <span class="gp-precio">$160.00</span>
+                    </div>
+                  </div>
+                  <div style="width: 6rem;">
+                    <label class="visually-hidden" for="cant-2">Cantidad de Ribeye</label>
+                    <input type="number" class="form-control" id="cant-2" data-nombre="Ribeye" data-precio="160.00"
+                      min="0" max="20" value="0">
+                  </div>
+                </li>
+
+                <!-- Boneless de pollo -->
+                <li class="list-group-item d-flex align-items-center justify-content-between gap-3 px-0">
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="img/platillo3.png" alt="Boneless de pollo" class="gp-thumb rounded">
+                    <div>
+                      <strong>Boneless de pollo</strong><br>
+                      <span class="gp-precio">$70.00</span>
+                    </div>
+                  </div>
+                  <div style="width: 6rem;">
+                    <label class="visually-hidden" for="cant-3">Cantidad de Boneless de pollo</label>
+                    <input type="number" class="form-control" id="cant-3" data-nombre="Boneless de pollo"
+                      data-precio="70.00" min="0" max="20" value="0">
+                  </div>
+                </li>
+
+                <!-- Volcán de chocolate -->
+                <li class="list-group-item d-flex align-items-center justify-content-between gap-3 px-0">
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="img/platillo4.png" alt="Volcán de chocolate" class="gp-thumb rounded">
+                    <div>
+                      <strong>Volcán de chocolate</strong><br>
+                      <span class="gp-precio">$65.00</span>
+                    </div>
+                  </div>
+                  <div style="width: 6rem;">
+                    <label class="visually-hidden" for="cant-4">Cantidad de Volcán de chocolate</label>
+                    <input type="number" class="form-control" id="cant-4" data-nombre="Volcán de chocolate"
+                      data-precio="65.00" min="0" max="20" value="0">
+                  </div>
+                </li>
+
+                <!-- Vino -->
+                <li class="list-group-item d-flex align-items-center justify-content-between gap-3 px-0">
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="img/bebida1.png" alt="Vino" class="gp-thumb rounded">
+                    <div>
+                      <strong>Vino</strong><br>
+                      <span class="gp-precio">$145.00</span>
+                    </div>
+                  </div>
+                  <div style="width: 6rem;">
+                    <label class="visually-hidden" for="cant-5">Cantidad de Vino</label>
+                    <input type="number" class="form-control" id="cant-5" data-nombre="Vino" data-precio="145.00"
+                      min="0" max="20" value="0">
+                  </div>
+                </li>
+
+                <!-- Café -->
+                <li class="list-group-item d-flex align-items-center justify-content-between gap-3 px-0">
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="img/bebida2.png" alt="Café" class="gp-thumb rounded">
+                    <div>
+                      <strong>Café</strong><br>
+                      <span class="gp-precio">$45.00</span>
+                    </div>
+                  </div>
+                  <div style="width: 6rem;">
+                    <label class="visually-hidden" for="cant-6">Cantidad de Café</label>
+                    <input type="number" class="form-control" id="cant-6" data-nombre="Café" data-precio="45.00" min="0"
+                      max="20" value="0">
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+
+          <!-- Columna derecha: resumen y datos de quien recoge -->
+          <div class="col-lg-5">
+            <div class="gp-panel gp-sticky">
+              <h2 class="h3 mb-3">Tu pedido</h2>
+
+              <p class="gp-texto-suave" id="resumen-vacio">Aún no has elegido platillos.</p>
+              <!-- Línea de descuento: solo se muestra cuando hay un cupón aplicado -->
+              <div id="linea-descuento" class="d-none">
+                <div class="d-flex justify-content-between align-items-center text-success fw-semibold mb-2">
+                  <span id="texto-descuento">Descuento</span>
+                  <span id="monto-descuento">-$0.00</span>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between align-items-center border-top pt-3 mb-4">
+                <span class="fw-semibold">Total</span>
+                <span class="gp-precio" id="total-pedido">$0.00</span>
+              </div>
+
+              <form id="form-pedido" class="needs-validation" novalidate>
+                <div class="mb-3">
+                  <label for="nombre" class="form-label">Nombre de quien recoge</label>
+                  <input type="text" class="form-control" id="nombre" required minlength="3">
+                  <div class="invalid-feedback">Escribe tu nombre.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="telefono" class="form-label">Teléfono</label>
+                  <input type="tel" class="form-control" id="telefono" required pattern="[0-9 ]{10,14}" inputmode="tel">
+                  <div class="invalid-feedback">Escribe un teléfono de 10 dígitos.</div>
+                </div>
+
+                <!-- Cupón de descuento -->
+                <div class="mb-3">
+                  <label for="cupon" class="form-label">Cupón de descuento (opcional)</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="cupon" placeholder="Ej. DESCUENTO10" autocomplete="off">
+                    <button class="btn btn-outline-secondary" type="button" id="btn-cupon">Aplicar</button>
+                  </div>
+                  <div id="mensaje-cupon" class="form-text" aria-live="polite"></div>
+                </div>
+
+                <!-- Fecha de recogida -->
+                <div class="mb-3">
+                  <label for="fecha" class="form-label">Fecha de recogida</label>
+                  <input type="date" class="form-control" id="fecha" required>
+                  <div class="invalid-feedback">Selecciona una fecha válida.</div>
+                </div>
+
+                <!-- Hora de recogida -->
+                <div class="mb-3">
+                  <label for="hora" class="form-label">Hora de recogida</label>
+                  <input type="time" class="form-control" id="hora" required disabled>
+                  <div id="horario-info" class="form-text">Selecciona primero una fecha para ver el horario disponible.
+                  </div>
+                  <div class="invalid-feedback" id="hora-error">Selecciona una hora válida dentro del horario de
+                    atención.</div>
+                </div>
+
+                <div class="mb-4">
+                  <label for="notas" class="form-label">Notas para la cocina (opcional)</label>
+                  <textarea class="form-control" id="notas" rows="2"></textarea>
+                </div>
+                <button type="submit" class="btn btn-acento btn-lg w-100">Confirmar pedido</button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="gp-footer" class="gp-footer"></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/pedidos.js"></script>
+</body>
+
+</html>

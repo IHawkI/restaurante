@@ -1,0 +1,21 @@
+/* Estilo base para los botones del filtro (borde y texto en verde) */
+#filtros-menu .nav-link {
+   color: #1a3931;
+   /* Verde oscuro principal */
+   border: 1px solid #1a3931;
+   background-color: transparent;
+   transition: all 0.2s ease-in-out;
+}
+
+/* Efecto Hover*/
+#filtros-menu .nav-link:hover {
+   background-color: #1a3931;
+   color: #ffffff;
+}
+
+/* Estado activo / pestaña seleccionada */
+#filtros-menu .nav-link.active {
+   background-color: #1a3931;
+   border-color: #1a3931;
+   color: #ffffff;
+}

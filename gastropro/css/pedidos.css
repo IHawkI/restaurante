@@ -1,0 +1,47 @@
+/* Panel del resumen de pedido fijo en pantallas grandes */
+@media (min-width: 992px) {
+   .gp-sticky {
+      position: sticky;
+      top: 2rem;
+      z-index: 10;
+   }
+}
+
+/* Alineación e interacción para las entradas numéricas de platillos */
+#lista-pedido input[type="number"] {
+   text-align: center;
+   font-weight: 600;
+}
+
+/* Formato visual para los mensajes de respuesta del cupón */
+#mensaje-cupon.text-success {
+   color: var(--bs-success, #198754) !important;
+}
+
+#mensaje-cupon.text-danger {
+   color: var(--bs-danger, #dc3545) !important;
+}
+
+/* Ajuste sutil para el texto de ayuda sobre el horario de atención */
+#horario-info {
+   font-size: 0.875rem;
+   margin-top: 0.25rem;
+}
+
+/* Ajuste de listas dentro del panel de pedido */
+#lista-pedido .list-group-item {
+   background-color: transparent;
+   transition: background-color 0.2s ease;
+}
+
+#lista-pedido .list-group-item:hover {
+   background-color: rgba(0, 0, 0, 0.015);
+}
+
+/* Miniatura recortada para la lista de pedidos */
+.gp-thumb {
+   width: 50px;
+   height: 50px;
+   object-fit: cover;
+   flex-shrink: 0;
+}

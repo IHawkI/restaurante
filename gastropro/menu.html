@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menú | GastroPro</title>
+  <meta name="description" content="Menú de platillos de GastroPro.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Source+Sans+3:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/estilos.css" rel="stylesheet">
+  <link href="css/menu.css" rel="stylesheet">
+  <script src="js/componentes.js" defer></script>
+</head>
+
+<body data-pagina="menu" class="d-flex flex-column min-vh-100">
+
+  <header id="gp-navbar"></header>
+
+  <main id="contenido" tabindex="-1" class="flex-grow-1">
+
+    <section class="gp-page-header">
+      <div class="container">
+        <h1>Nuestro menú</h1>
+        <p>Elige tus platillos y, si quieres llevarlos, pídelos para recoger.</p>
+      </div>
+    </section>
+
+    <section class="gp-seccion">
+      <div class="container">
+
+        <!-- Filtros por categoría (TODO: programar el filtrado en js/menu.js) -->
+        <ul class="nav nav-pills gap-2 mb-4" id="filtros-menu">
+          <li class="nav-item"><button class="nav-link active" type="button" data-categoria="todos">Todos</button></li>
+          <li class="nav-item"><button class="nav-link" type="button" data-categoria="entradas">Entradas</button></li>
+          <li class="nav-item"><button class="nav-link" type="button" data-categoria="fuertes">Platos fuertes</button>
+          </li>
+          <li class="nav-item"><button class="nav-link" type="button" data-categoria="postres">Postres</button></li>
+          <li class="nav-item"><button class="nav-link" type="button" data-categoria="bebidas">Bebidas</button></li>
+        </ul>
+
+        <!-- Cada platillo lleva data-categoria con el mismo valor que su botón de filtro -->
+        <div class="row g-4" id="lista-platillos">
+
+          <div class="col-md-6 col-lg-4" data-categoria="entradas">
+            <article class="gp-platillo">
+              <img src="img/platillo1.png" alt="Platillo Vegetariano">
+              <div class="gp-platillo-cuerpo">
+                <h3>Ensalada</h3>
+                <span class="gp-etiqueta mb-2 align-self-start">Vegetariano</span>
+                <p>Fresca mezcla de quinoa, hojas verdes, jitomate, pepino y un toque de limón..</p>
+                <div class="gp-platillo-pie">
+                  <span class="gp-precio">$85.00</span>
+                  <a href="pedidos.html" class="btn btn-outline-primary btn-sm">Pedir</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-categoria="fuertes">
+            <article class="gp-platillo">
+              <img src="img/platillo2.png" alt="Descripción de la imagen">
+              <div class="gp-platillo-cuerpo">
+                <h3>Ribeye</h3>
+                <p>Jugoso corte de carne a la parrilla, sazonado a la perfección y acompañado con romero fresco</p>
+                <div class="gp-platillo-pie">
+                  <span class="gp-precio">$160.00</span>
+                  <a href="pedidos.html" class="btn btn-outline-primary btn-sm">Pedir</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-categoria="entradas">
+            <article class="gp-platillo">
+              <img src="img/platillo3.png" alt="Descripción de la imagen">
+              <div class="gp-platillo-cuerpo">
+                <h3>Boneless de pollo </h3>
+                <p>Crujientes trozos de pollo bañados en salsa buffalo, acompañados de bastones de apio y aderezo ranch.
+                </p>
+                <div class="gp-platillo-pie">
+                  <span class="gp-precio">$70.00</span>
+                  <a href="pedidos.html" class="btn btn-outline-primary btn-sm">Pedir</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4" data-categoria="postres">
+            <article class="gp-platillo">
+              <img src="img/platillo4.png " class="volcan" alt="Volcan de chocolate">
+              <div class="gp-platillo-cuerpo">
+                <h3>Volcan de chocolate</h3>
+                <p>Para los amantes del chocolate derretido.</p>
+                <div class="gp-platillo-pie">
+                  <span class="gp-precio">$65.00</span>
+                  <a href="pedidos.html" class="btn btn-outline-primary btn-sm">Pedir</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-categoria="bebidas">
+            <article class="gp-platillo">
+              <img src="img/bebida1.png" alt="Descripción de la imagen">
+              <div class="gp-platillo-cuerpo">
+                <h3>Vino</h3>
+                <p>Vino tinto de la casa con notas frutales, perfecto para maridar tus platillos</p>
+                <div class="gp-platillo-pie">
+                  <span class="gp-precio">$145.00</span>
+                  <a href="pedidos.html" class="btn btn-outline-primary btn-sm">Pedir</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4" data-categoria="bebidas">
+            <article class="gp-platillo">
+              <img src="img/bebida2.png" alt="Descripción de la imagen">
+              <div class="gp-platillo-cuerpo">
+                <h3>Cafe</h3>
+                <p>Con granos de cafe directamente importados del Hawai</p>
+                <div class="gp-platillo-pie">
+                  <span class="gp-precio">$45.00</span>
+                  <a href="pedidos.html" class="btn btn-outline-primary btn-sm">Pedir</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- TODO (equipo): copiar el bloque de arriba por cada platillo del menú -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="gp-footer" class="gp-footer"></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+
+</html>

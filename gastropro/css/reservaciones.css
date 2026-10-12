@@ -1,0 +1,71 @@
+.gp-reservacion-card,
+.gp-info-card {
+   background-color: var(--gp-blanco, #ffffff);
+   border: 1px solid var(--gp-borde, rgba(0, 0, 0, 0.08));
+   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gp-reservacion-card:hover,
+.gp-info-card:hover {
+   transform: translateY(-2px);
+   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
+}
+
+/* 2. Selector de área (Interior, Terraza, Barra) */
+.gp-area-selector {
+   margin-top: 0.25rem;
+   /* Espaciado extra con la etiqueta */
+}
+
+.gp-area-selector .btn-outline-secondary {
+   border-color: var(--gp-borde, #dee2e6);
+   color: var(--gp-texto, #212529);
+   font-weight: 600;
+   font-size: 0.9rem;
+   transition: all 0.2s ease-in-out;
+   cursor: pointer;
+}
+
+.gp-area-selector .btn-outline-secondary:hover {
+   border-color: var(--gp-bosque, #198754);
+   color: var(--gp-bosque, #198754);
+   background-color: rgba(25, 135, 84, 0.04);
+}
+
+.gp-area-selector .btn-check:checked+.btn-outline-secondary {
+   background-color: var(--gp-bosque, #198754);
+   border-color: var(--gp-bosque, #198754);
+   color: #ffffff;
+   box-shadow: 0 4px 12px rgba(25, 135, 84, 0.25);
+   transform: scale(1.02);
+}
+
+/* 3. Enfoque e interacción en inputs */
+.gp-reservacion-card .form-control {
+   transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gp-reservacion-card .form-control:focus {
+   border-color: var(--gp-bosque, #198754);
+   box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.18);
+}
+
+/* 4. Tipografía suave */
+.gp-texto-suave {
+   font-size: 0.95rem;
+   line-height: 1.6;
+}
+
+/* 5. Adaptación móvil */
+@media (max-width: 576px) {
+   .gp-area-selector .btn-outline-secondary {
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
+      font-size: 0.8rem;
+   }
+
+   .gp-reservacion-card {
+      padding: 1.5rem;
+   }
+}
